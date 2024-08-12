@@ -1,0 +1,92 @@
+---
+import CompCarousel from "./CompCarousel.astro";
+---
+
+<section
+    id="container-carousel"
+    class="relative flex items-center justify-center h-[55vh] bg-yellow-600 text-white"
+>
+    <div
+        id="carrusel"
+        class="w-[80%] h-full flex justify-around items-center z-10"
+    >
+        <div
+            id="c2"
+            class="comp-carrusel hidden justify-center items-center gap-3 lg:gap-16"
+        >
+            <CompCarousel
+            />
+        </div>
+        <div
+            id="c3"
+            class="comp-carrusel hidden justify-center items-center gap-3 lg:gap-16"
+        >
+            <CompCarousel
+            />
+        </div>
+        <div
+            id="c4"
+            class="comp-carrusel hidden justify-center items-center gap-3 lg:gap-16"
+        >
+            <CompCarousel
+            />
+        </div>
+        <div
+            id="c5"
+            class="comp-carrusel hidden justify-center items-center gap-3 lg:gap-16"
+        >
+            <CompCarousel
+            />
+        </div>
+    </div>
+</section>
+<style>
+    .desaparecer {
+        display: none;
+    }
+    .aparecer{
+        display: flex;
+        animation-name: aparecerAll;
+        animation-duration: 1.7s;
+    }
+    @keyframes aparecerAll {
+        0%{
+            opacity: .4;
+            transform: translateY(20%);
+            
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+<script>
+    const carousel = document.querySelectorAll(".comp-carrusel");
+    const prev = document.querySelector(".prev");
+    const next = document.querySelector(".next");
+    let i = 0;
+    let j;
+    carousel[i].classList.remove("desaparecer");
+    carousel[i].classList.add("aparecer");
+    j = i;
+    i++;
+    setInterval(() => {
+        if (i < carousel.length) {
+            carousel[j].classList.remove("aparecer");
+            carousel[j].classList.add("desaparecer");
+            carousel[i].classList.remove("desaparecer");
+            carousel[i].classList.add("aparecer");
+            j = i;
+            i++;
+        } else {
+            i = 0;
+            carousel[j].classList.remove("aparecer");
+            carousel[j].classList.add("desaparecer");
+            carousel[i].classList.remove("desaparecer");
+            carousel[i].classList.add("aparecer");
+            j = i;
+            i++;
+        }
+    }, 4000);
+</script>

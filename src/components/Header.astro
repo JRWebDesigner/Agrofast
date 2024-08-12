@@ -1,0 +1,73 @@
+---
+import Logo from "./Logo.astro"
+---
+<header class="relative w-full bg-white flex justify-around items-center h-24">
+    <Logo />
+    <nav class="hidden md:block">
+        <ul class="flex gap-14">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/Granos">Granos</a></li>
+            <li><a href="/HarinaBalanc">Harinas - Balanceados</a></li>
+            <li><a href="/Contactos">Contactos</a></li>
+        </ul>
+    </nav>
+    <button
+        title="menu Agrofast"
+        name="button"
+        class="menu z-30 md:hidden mt-1 absolute right-7"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="35"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M4 6l16 0"></path><path d="M4 12l16 0"></path><path
+                d="M4 18l16 0"></path></svg
+        >
+    </button>
+    <nav class="mobile desactiv absolute block md:hidden py-3 bg-white z-50 w-full">
+        <ul class="grid gap-4 place-items-center">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/Granos">Granos</a></li>
+            <li><a href="/HarinaBalanc">Harinas - Balanceados</a></li>
+            <li><a href="/Contactos">Contactos</a></li>
+        </ul>
+    </nav>
+</header>
+<style>
+    li{
+        color:rgb(6, 204, 6);
+        font-size: 29px;
+        font-weight: 600;
+    }
+    li:hover{
+        color:rgb(70, 70, 70);
+    }   
+    .mobile{
+        transition: .3s all;
+    }
+    .mobile.desactiv{
+        transform: translateY(-100%);
+    }
+</style>
+<script>
+    const menu = document.querySelector('.menu')
+    const mobile=document.querySelector('.mobile')
+    menu.addEventListener('click',()=>{
+        if(mobile.classList.contains('desactiv')){
+            mobile.classList.remove('desactiv')
+            mobile.classList.add('top-[100%]')
+        }
+        else{
+            mobile.classList.remove('top-[100%]')
+            mobile.classList.add('desactiv')
+        }
+    })
+</script>
