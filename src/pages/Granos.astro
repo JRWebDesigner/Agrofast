@@ -2,12 +2,14 @@
 import Layout from "../layouts/Layout.astro"
 ---
 <Layout title="Agrofast - Granos">
-    <div class="h-[55vh] text-center gap-10 flex-wrap flex justify-center items-center font-bold text-3xl bg-green-600 text-white">
-        <h1>EXPERTOS EN LA COMERCIALIZACIÓN DE GRANOS</h1>
-        <img class="hidden md:block w-[110px]" src="/maiz.png" alt="icono de maiz">
+    <div class="h-[55vh] relative w-full text-center gap-10 flex-wrap flex justify-center items-center font-bold text-3xl bg-green-600 text-white">
+        <h1 class="z-10">EXPERTOS EN LA COMERCIALIZACIÓN DE GRANOS</h1>
+        <img class="z-10 hidden md:block w-[110px]" src="/maiz.png" alt="icono de maiz">
+        <img class="absolute object-cover opacity-30 w-full h-full z-10" src="/image3.png" alt="foto de cultivo de maiz">
     </div>
     <p class="text-center font-bold text-2xl m-20">Nos encargamos de garantizar las negociaciones más favorables. Nos dedicamos a comercializar los granos más demandados del mercado: soya, maíz y sorgo, llevando lo mejor de la cosecha a las industrias. Velamos por la excelencia para nuestros clientes y por la transparencia con los productores.</p>
-    <div class="my-5 flex flex-wrap gap-10 justify-center items-center bg-green-300 py-4">
+    <div class="relative bg-opacity-55 my-5 flex flex-wrap gap-10 justify-center items-center bg-green-300 py-4">
+        <img class="absolute object-cover w-full h-full -z-10" src="/image4.png" alt="foto de cultivo de soya">
         <div class="w-[50%] md:w-[20%] min-h-[300px] max-h-[500px] bg-[#e4e4e4] rounded-3xl p-2 text-center grid place-items-center gap-6">
             <img class="rounded-full w-44 h-44 object-cover" src="/maizFoto.jpg" alt="foto de maiz agrofast">
             <div>
