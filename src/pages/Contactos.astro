@@ -7,8 +7,8 @@ import Layout from "../layouts/Layout.astro"
         <img class="absolute object-cover w-full h-full -z-10" src="/image3.png" alt="foto de cultivo de maiz">
     </div>
     <h2 class="text-center font-bold text-5xl">Contacténos</h2>
-    <div class="grid place-items-center mb-10" >
-        <form class="w-[80%] grid place-items-center border-2 border-green-300 h-auto rounded-2xl p-6 gap-4"   action="https://formsubmit.co/Agrofastsrl@gmail.com" method="POST">
+    <div class="grid place-items-center mb-10 mt-2 " >
+        <form class="w-[80%] grid place-items-center border-2 border-green-300 h-auto rounded-2xl md:p-6 gap-4 py-3"   action="https://formsubmit.co/Agrofastsrl@gmail.com" method="POST">
             <div class="flex flex-col">
                 <label for="name"><strong>NOMBRE</strong></label>
                 <input class="p-6 text center md:min-w-[800px] border-2 border-black rounded-lg max-h-[40px]" type="text" name="name" id="name" placeholder="introduzca su nombre..." required>
@@ -25,10 +25,11 @@ import Layout from "../layouts/Layout.astro"
                 <label for="mensaje"><strong>MENSAJE</strong></label>
                 <textarea placeholder="Mensaje... " class="p-6 md:min-w-[800px] border-2 border-black rounded-xl min-h-[100px]" name="mensaje" id="mensaje"></textarea>
             </div>
-            <button class="w-[80%] rounded-2xl shadow-xl shadow-green-300 bg-green-600 text-white font-bold text-4xl" type="submit">
+            <button class="w-[80%] rounded-2xl shadow-xl shadow-green-300 bg-green-600 text-white font-bold text-2xl md:text-4xl" type="submit">
                     ENVIAR
             </button>
             <input type="hidden" name="_next" value="https://agrofastsrl.com">
+            <input type="hidden" name="_captcha" value="false">
         </form>
     </div>
 </Layout>
